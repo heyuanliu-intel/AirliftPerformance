@@ -22,15 +22,15 @@ Below is the result for OpenSSL implementation.
 Running 2m test @ https://localhost:9300/v1/service
   128 threads and 2000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    46.23ms   66.43ms 558.99ms   82.74%
-    Req/Sec     3.30k     1.76k   19.07k    70.27%
-  50158401 requests in 2.00m, 7.33GB read
-Requests/sec: 417646.32
-Transfer/sec:     62.53MB
+    Latency    44.23ms   60.03ms 780.37ms   79.88%
+    Req/Sec     3.40k     1.79k   22.39k    69.67%
+  51789087 requests in 2.00m, 7.57GB read
+Requests/sec: 431214.70
+Transfer/sec:     64.56MB
 </pre>
 
-So based on the result, we can get the 30% performance improvement from OpenSSL.
+So based on the result, we can get the 38% performance improvement from OpenSSL.
 
 |   Attempt    |   #JDK    | #OpenSSL  | improvement |
 | :----------: | :-------: | :-------: | :---------: |
-| Requests/sec | 313520.67 | 417646.32 |    1.33X    |
+| Requests/sec | 313520.67 | 431214.70 |    1.38X    |
