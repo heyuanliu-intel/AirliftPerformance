@@ -19,9 +19,13 @@ public class Service
     {
         OpenSSLProvider.register();
 
-        //String[] ciphers = OpenSSLContextSPI.getAvailableCipherSuites();
-        SSLContext sslContext = SSLContext.getInstance("TLS", "openssl");
-        SSLContext.setDefault(sslContext);
+        String provider = System.getenv("provider");
+        System.out.println("system provider is :" + provider);
+        if ("openssl".equals(provider) || "qat".equals(provider)) {
+            System.out.println("set default SSLContext to openssl");
+            SSLContext sslContext = SSLContext.getInstance("TLS", "openssl");
+            SSLContext.setDefault(sslContext);
+        }
 
         Bootstrap app = new Bootstrap(new ServiceModule(),
                 new NodeModule(),
